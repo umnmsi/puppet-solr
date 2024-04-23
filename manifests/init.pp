@@ -213,7 +213,7 @@ class solr (
     subscribe => Class['solr::config'],
   }
 
-  if is_hash($cores) {
+  if $cores =~ Hash {
     create_resources(::solr::core, $cores)
   }
 
